@@ -52,13 +52,6 @@ export default function ArticlesPage() {
                 >
                   Browse Issue One
                 </a>
-                <a
-                  href="/issues/grey-matters-penn-issue-one-revised.pdf"
-                  download
-                  className="inline-flex items-center justify-center rounded-[var(--radius-md)] border border-[var(--color-border)] px-5 py-3 text-[var(--color-text-primary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-                >
-                  Download PDF
-                </a>
               </div>
             </div>
           </div>

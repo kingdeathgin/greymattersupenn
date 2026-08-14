@@ -26,8 +26,8 @@ const libreBaskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   title: "Penn Grey Matters | Making Neuroscience Accessible",
   icons: {
-    icon: "/main-image.png",
-    apple: "/main-image.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   description:
     "A student publication at the University of Pennsylvania dedicated to broadening access to neuroscience content through articles, podcasts, and interactive experiences.",
