@@ -1,0 +1,10 @@
+[
+  { "name": "Penn", "university": "University of Pennsylvania", "url": "https://greymattersjournalpenn.org", "memberCount": null, "lat": 39.9522, "lng": -75.1932 },
+  { "name": "Vassar", "university": "Vassar College", "url": "https://www.greymattersjournalvc.org", "memberCount": null, "lat": 41.6869, "lng": -73.8945 },
+  { "name": "Temple", "university": "Temple University", "url": "https://greymattersjournaltu.org", "memberCount": null, "lat": 39.9812, "lng": -75.1554 },
+  { "name": "Columbia/Barnard", "university": "Columbia University/Barnard College", "url": "https://www.greymattersjournalcu.org", "memberCount": null, "lat": 40.8075, "lng": -73.9626 },
+  { "name": "Emory", "university": "Emory University", "url": "https://scholarblogs.emory.edu/greymattersemory", "memberCount": null, "lat": 33.7920, "lng": -84.3232 },
+  { "name": "UCLA", "university": "UCLA", "url": "https://greymattersjournalucla.wordpress.com", "memberCount": null, "lat": 34.0689, "lng": -118.4452 },
+  { "name": "NYU", "university": "NYU", "url": "https://linktr.ee/greymattersnyu", "memberCount": null, "lat": 40.7295, "lng": -73.9973 },
+  { "name": "Georgia State", "university": "Georgia State University", "url": "https://sites.gsu.edu/greymatters", "memberCount": null, "lat": 33.7531, "lng": -84.3853 }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "memory",
+    "name": "Memory",
+    "regions": ["hippocampus", "prefrontal_cortex", "amygdala"],
+    "description": "The pathway from encoding experiences to long-term storage, involving the hippocampus for consolidation and the prefrontal cortex for retrieval."
+  },
+  {
+    "id": "vision",
+    "name": "Vision",
+    "regions": ["retina", "optic_nerve", "visual_cortex"],
+    "description": "Light enters the eye, travels through the optic nerve, and is processed in the visual cortex to create the images we perceive."
+  },
+  {
+    "id": "emotion",
+    "name": "Emotion",
+    "regions": ["amygdala", "hippocampus", "prefrontal_cortex"],
+    "description": "Emotional processing involves the amygdala for immediate reactions, the hippocampus for emotional memories, and the prefrontal cortex for regulation."
+  },
+  {
+    "id": "language",
+    "name": "Language",
+    "regions": ["broca_area", "wernicke_area", "prefrontal_cortex"],
+    "description": "Language production and comprehension involve Broca's area for speech and Wernicke's area for understanding."
+  }
+]

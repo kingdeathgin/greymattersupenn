@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hippocampus",
+    "meshName": "Hippocampus_L",
+    "displayName": "Hippocampus",
+    "functions": ["Memory consolidation", "Spatial navigation", "Emotional regulation"],
+    "conditions": ["Alzheimer's disease", "PTSD", "Depression"],
+    "articles": ["thinking-in-tongues", "memory-and-aging"],
+    "color": "#9B5DE5",
+    "activationColor": "#00E5FF",
+    "fact": "Your hippocampus physically grows when you learn to navigate a city — London taxi drivers have measurably larger ones.",
+    "pathway": "memory"
+  },
+  {
+    "id": "amygdala",
+    "meshName": "Amygdala_L",
+    "displayName": "Amygdala",
+    "functions": ["Fear processing", "Emotional memory", "Stress response"],
+    "conditions": ["Anxiety disorders", "PTSD", "Depression"],
+    "articles": [],
+    "color": "#9B5DE5",
+    "activationColor": "#F4D35E",
+    "fact": "The amygdala can trigger a fear response before your conscious brain even processes the threat — it's why you jump at sudden sounds.",
+    "pathway": "emotion"
+  },
+  {
+    "id": "prefrontal_cortex",
+    "meshName": "PrefrontalCortex",
+    "displayName": "Prefrontal Cortex",
+    "functions": ["Decision making", "Working memory", "Personality expression"],
+    "conditions": ["ADHD", "Schizophrenia", "Depression"],
+    "articles": [],
+    "color": "#9B5DE5",
+    "activationColor": "#00E5FF",
+    "fact": "The prefrontal cortex isn't fully developed until your mid-20s — which explains why teenagers make riskier decisions.",
+    "pathway": "cognition"
+  },
+  {
+    "id": "visual_cortex",
+    "meshName": "VisualCortex",
+    "displayName": "Visual Cortex",
+    "functions": ["Visual processing", "Shape recognition", "Motion detection"],
+    "conditions": ["Blindness", "Visual agnosia"],
+    "articles": [],
+    "color": "#9B5DE5",
+    "activationColor": "#00E5FF",
+    "fact": "About 30% of your brain is devoted to processing visual information — more than any other sense.",
+    "pathway": "vision"
+  },
+  {
+    "id": "cerebellum",
+    "meshName": "Cerebellum",
+    "displayName": "Cerebellum",
+    "functions": ["Motor control", "Balance", "Coordination"],
+    "conditions": ["Ataxia", "Cerebellar degeneration"],
+    "articles": [],
+    "color": "#9B5DE5",
+    "activationColor": "#F4D35E",
+    "fact": "The cerebellum contains over half of the brain's neurons despite being only 10% of its volume.",
+    "pathway": "motor"
+  }
+]
