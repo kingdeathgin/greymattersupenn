@@ -7,7 +7,6 @@ import { HeroSection } from "@/components/hero/HeroSection";
 import { ArticlesRow } from "@/components/articles/ArticlesRow";
 import { SocialFeature } from "@/components/SocialFeature";
 import { NeuronNetworkSection } from "@/components/neuron-network/NeuronNetworkSection";
-import { NeuralExperimentsSection } from "@/components/neural-experiments/NeuralExperimentsSection";
 import { BrainStatsSection } from "@/components/explore/BrainStatsSection";
 import articles from "@/data/articles.json";
 import { JoinSection } from "@/components/JoinSection";
@@ -32,10 +31,9 @@ export default function HomePage() {
       <main>
         <HeroSection expanded={heroExpanded} />
         <Preloader visible={preloaderVisible} />
+        <NeuronNetworkSection />
         <ArticlesRow articles={articles} />
         <SocialFeature />
-        <NeuronNetworkSection />
-        <NeuralExperimentsSection />
         <BrainStatsSection />
         <JoinSection />
         <Footer />

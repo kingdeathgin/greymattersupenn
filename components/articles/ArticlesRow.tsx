@@ -86,10 +86,92 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
 
   return (
     <section
-      className="py-[var(--space-2xl)] md:py-[var(--space-3xl)] bg-[var(--color-bg)] border-t border-[var(--color-accent)]/10"
+      className="journal-paper relative overflow-hidden py-[var(--space-2xl)] md:py-[var(--space-3xl)] border-y border-black/10"
       aria-label="Latest articles"
     >
-      <div className="max-w-[var(--wide-max)] mx-auto px-4 md:px-8">
+      <Image
+        src="/images/editorial/neuroscience-margin-notes.png"
+        alt=""
+        width={1254}
+        height={1254}
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-28 top-10 hidden w-[34rem] rotate-[7deg] opacity-[0.22] saturate-[1.12] lg:block"
+      />
+
+      <div className="relative z-10 max-w-[var(--wide-max)] mx-auto px-4 md:px-8">
+        <header className="mb-8 border-y-2 border-[var(--color-text-primary)] py-4 md:mb-12">
+          <div className="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+            <span>Issue No. 01</span>
+            <span className="hidden sm:inline">The student neuroscience journal of Penn</span>
+            <span>Fall 2025</span>
+          </div>
+          <div className="mt-3 flex items-end justify-between gap-6 border-t border-[var(--color-text-primary)]/25 pt-3">
+            <div>
+              <p className="journal-title-dimensional flex items-end font-editorial text-4xl leading-none md:text-6xl" aria-label="Grey Matters">
+                <span aria-hidden="true">Grey Matter</span>
+                <span className="journal-written-s relative -ml-[0.02em] inline-block h-[0.92em] w-[0.58em]" aria-hidden="true">
+                  <svg className="absolute inset-0 h-full w-full overflow-visible" viewBox="0 0 50 70" fill="none">
+                    <path
+                      className="journal-written-s-stroke"
+                      d="M42 9C31 2 12 4 8 16C4 28 17 31 29 33C43 36 47 45 41 55C35 64 22 66 14 60"
+                      stroke="currentColor"
+                      strokeWidth="4.2"
+                      strokeLinecap="round"
+                      pathLength="100"
+                    />
+                    <g className="journal-pencil">
+                      <g className="journal-pencil-jitter">
+                        <animateTransform
+                          attributeName="transform"
+                          type="translate"
+                          values="-3.2 -3.2; 3.2 3.2; -2.2 -2.2; 2.5 2.5; -3.2 -3.2"
+                          dur="0.95s"
+                          repeatCount="indefinite"
+                        />
+                        <g transform="rotate(120 0 0)">
+                          <path d="M0 0L8-7L34-12L38-4L10 3L0 0Z" fill="#d6a548" stroke="#46382a" strokeWidth="1.5" />
+                          <path d="M8-7L10 3M31-11L35-3" stroke="#46382a" strokeWidth="1.4" />
+                          <path d="M0 0L8-7L10 3L0 0Z" fill="#ead6ad" stroke="#46382a" strokeWidth="1.2" />
+                          <path d="M0 0L3.6-2.9L4.5 1.1L0 0Z" fill="#28231f" />
+                        </g>
+                        <g className="journal-graphite-dust" fill="#77716b">
+                          <circle r="1.2">
+                            <animate attributeName="cx" values="0;-5;-8" dur="0.7s" repeatCount="indefinite" />
+                            <animate attributeName="cy" values="0;2;5" dur="0.7s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.7;0.35;0" dur="0.7s" repeatCount="indefinite" />
+                          </circle>
+                          <circle r="0.85">
+                            <animate attributeName="cx" values="0;-3;-6" dur="0.55s" begin="0.18s" repeatCount="indefinite" />
+                            <animate attributeName="cy" values="0;-1;-4" dur="0.55s" begin="0.18s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.65;0.3;0" dur="0.55s" begin="0.18s" repeatCount="indefinite" />
+                          </circle>
+                          <circle r="0.65">
+                            <animate attributeName="cx" values="0;2;5" dur="0.62s" begin="0.32s" repeatCount="indefinite" />
+                            <animate attributeName="cy" values="0;3;6" dur="0.62s" begin="0.32s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.55;0.25;0" dur="0.62s" begin="0.32s" repeatCount="indefinite" />
+                          </circle>
+                        </g>
+                      </g>
+                      <animateMotion
+                        dur="1.35s"
+                        begin="0.45s"
+                        fill="freeze"
+                        path="M42 9C31 2 12 4 8 16C4 28 17 31 29 33C43 36 47 45 41 55C35 64 22 66 14 60"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </p>
+              <p className="mt-2 font-editorial text-sm italic text-[var(--color-text-muted)] md:text-base">
+                Notes on the brain, mind, and everything between.
+              </p>
+            </div>
+            <span className="hidden font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-text-muted)] md:block">
+              University of Pennsylvania
+            </span>
+          </div>
+        </header>
+
         <div className="border-y border-[var(--color-accent)]/15 py-3 flex flex-wrap justify-center gap-x-5 gap-y-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
           <span>Student-led</span>
           <span className="text-[var(--color-accent)]">•</span>
@@ -101,16 +183,19 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
         <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-7 md:gap-12 py-10 md:py-14 items-center">
           <Link
             href={`/articles/${featuredArticle.slug}`}
-            className="relative block aspect-[16/10] overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-accent)]/20 group"
+            className="journal-clipping relative block aspect-[16/10] overflow-hidden border border-black/15 bg-white p-2 pb-7 shadow-[0_12px_30px_rgba(45,35,25,0.14)] group"
           >
-            <Image
-              src={featuredArticle.image}
-              alt=""
-              fill
-              sizes="(min-width: 768px) 55vw, 100vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/65 via-transparent to-transparent" />
+            <span className="relative block h-full overflow-hidden">
+              <Image
+                src={featuredArticle.image}
+                alt=""
+                fill
+                sizes="(min-width: 768px) 55vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <span className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            </span>
+            <span className="absolute left-1/2 top-0 h-7 w-28 -translate-x-1/2 -translate-y-1/2 -rotate-2 bg-[#ded2ba]/90 shadow-sm" aria-hidden="true" />
           </Link>
           <article>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent)] mb-3">
@@ -139,7 +224,7 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
         </div>
       </div>
 
-      <div className="max-w-[var(--wide-max)] mx-auto px-4 md:px-8 mb-8 flex items-end justify-between gap-4">
+      <div className="relative z-10 max-w-[var(--wide-max)] mx-auto px-4 md:px-8 mb-8 flex items-end justify-between gap-4">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent)] mb-2">
             More from the archive
@@ -159,7 +244,7 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
         </Link>
       </div>
 
-      <div className="articles-marquee overflow-hidden pl-4 md:pl-8">
+      <div className="relative z-10 articles-marquee overflow-hidden pl-4 md:pl-8">
         <div
           className="articles-marquee-track flex w-max"
           style={{ animationDuration: `${durationSeconds}s` }}

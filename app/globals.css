@@ -78,6 +78,7 @@
   --z-base: 0;
   --z-sticky: 10;
   --z-overlay: 50;
+  --z-navigation: 75;
   --z-modal: 100;
   --z-cursor: 9999;
 }
@@ -123,6 +124,99 @@ input, button, select, textarea, label {
 .font-body { font-family: var(--font-body); }
 .font-mono { font-family: var(--font-mono); }
 .font-editorial { font-family: var(--font-editorial-serif); }
+
+/* Restrained dimensional type for the homepage's primary statements. */
+.text-dimensional {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2),
+    0 2px 0 rgba(70, 88, 116, 0.72),
+    0 3px 0 rgba(35, 48, 75, 0.78),
+    0 7px 16px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(0, 229, 255, 0.12);
+  transform: translateZ(0);
+}
+
+.text-dimensional-accent {
+  text-shadow:
+    0 1px 0 rgba(225, 205, 255, 0.38),
+    0 2px 0 rgba(91, 50, 139, 0.9),
+    0 3px 0 rgba(49, 25, 83, 0.95),
+    0 8px 18px rgba(0, 0, 0, 0.58),
+    0 0 24px rgba(155, 93, 229, 0.28);
+}
+
+@media (max-width: 640px) {
+  .text-dimensional,
+  .text-dimensional-accent {
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.16),
+      0 2px 0 rgba(38, 48, 72, 0.72),
+      0 5px 12px rgba(0, 0, 0, 0.48);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-dimensional,
+  .text-dimensional-accent {
+    transform: none;
+  }
+}
+
+/* Warm editorial stock used for journal-led story sections. */
+.journal-paper {
+  --color-bg: #f3eee3;
+  --color-surface: #e9e0d1;
+  --color-accent: #59427c;
+  --color-accent-violet: #59427c;
+  --color-text-primary: #201d1a;
+  --color-text-muted: #675f56;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(89, 66, 124, 0.055), transparent 25%),
+    radial-gradient(circle at 82% 72%, rgba(190, 147, 64, 0.06), transparent 24%),
+    repeating-linear-gradient(0deg, rgba(32, 29, 26, 0.018) 0 1px, transparent 1px 5px);
+}
+
+.journal-clipping {
+  transform: rotate(-0.45deg);
+  clip-path: polygon(0.5% 1%, 99% 0, 100% 98.5%, 1% 100%);
+}
+
+.journal-title-dimensional {
+  color: #29231f;
+  text-shadow:
+    0 1px 0 #fffdf7,
+    0 2px 0 #d9cdb7,
+    0 3px 0 #b9a789,
+    0 7px 13px rgba(65, 48, 32, 0.24);
+}
+
+.journal-written-s-stroke {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: journal-write-s 1.35s 0.45s cubic-bezier(0.55, 0, 0.25, 1) forwards;
+  filter: drop-shadow(0 2px 0 #b9a789) drop-shadow(0 5px 5px rgba(65, 48, 32, 0.2));
+}
+
+.journal-pencil {
+  filter: drop-shadow(0 3px 3px rgba(65, 48, 32, 0.28));
+}
+
+@keyframes journal-write-s {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-written-s-stroke {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .journal-graphite-dust {
+    display: none;
+  }
+}
 
 /* Heading scale */
 h1, .text-h1 {

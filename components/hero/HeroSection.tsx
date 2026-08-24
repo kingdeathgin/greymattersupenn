@@ -249,7 +249,7 @@ export function HeroSection({ expanded = false }: HeroSectionProps) {
               Penn Grey Matters
             </motion.p>
             <motion.h1
-                className="font-display text-[var(--color-text-primary)] mb-6 whitespace-nowrap"
+                className="text-dimensional font-display text-[var(--color-text-primary)] mb-6 whitespace-nowrap"
                 style={{
                   fontSize: "clamp(1.25rem, 3vw, 2.25rem)",
                   lineHeight: "1.1",

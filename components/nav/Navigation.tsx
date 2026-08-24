@@ -19,7 +19,7 @@ export function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[var(--z-sticky)] px-4 py-4 md:px-8"
+      className="fixed top-0 left-0 right-0 z-[var(--z-navigation)] isolate px-4 py-4 md:px-8"
       style={{ background: "var(--color-bg)" }}
     >
       <div className="max-w-[var(--wide-max)] mx-auto flex items-center justify-between">
@@ -51,6 +51,8 @@ export function Navigation() {
           className="md:hidden p-2 text-[var(--color-text-primary)]"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {mobileOpen ? (
@@ -64,7 +66,10 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+        <div
+          id="mobile-navigation"
+          className="relative z-10 -mx-4 px-4 md:hidden overflow-hidden bg-[var(--color-bg)] shadow-[0_18px_32px_rgba(0,0,0,0.45)] animate-in fade-in slide-in-from-top-2 duration-200"
+        >
           <ul className="flex flex-col gap-[var(--space-md)] py-[var(--space-lg)] font-mono text-sm uppercase text-[var(--color-text-muted)]" style={{ letterSpacing: "0.08em" }}>
             {navLinks.map((link) => (
               <li key={link.href}>

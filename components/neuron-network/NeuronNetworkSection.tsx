@@ -173,7 +173,7 @@ export function NeuronNetworkSection() {
             The Network
           </p>
           <h2
-            className="font-display text-[var(--color-text-primary)] max-w-2xl"
+            className="text-dimensional font-display text-[var(--color-text-primary)] max-w-2xl"
             style={{
               fontSize: "clamp(1.75rem, 4vw, 3rem)",
               fontWeight: 300,
@@ -182,7 +182,7 @@ export function NeuronNetworkSection() {
           >
             Billions of connections.
             <br />
-            <span className="text-[var(--color-accent-violet)]">
+            <span className="text-dimensional-accent text-[var(--color-accent-violet)]">
               One curious mind at a time.
             </span>
           </h2>
