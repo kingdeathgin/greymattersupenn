@@ -233,7 +233,11 @@ export function HeroSection({ expanded = false }: HeroSectionProps) {
               className="font-mono text-sm uppercase text-[var(--color-accent)] mt-2"
               style={{ letterSpacing: "0.2em" }}
             >
-              Making Neuroscience Accessible
+              Making{" "}
+              <span className="!text-[#ff78b7] [-webkit-text-fill-color:#ff78b7]">
+                Neuroscience
+              </span>{" "}
+              Accessible
             </motion.p>
           </>
         ) : null}
@@ -268,7 +272,10 @@ export function HeroSection({ expanded = false }: HeroSectionProps) {
                       "linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-primary) 50%, var(--color-accent) 100%)",
                   }}
                 >
-                  Making Neuroscience{" "}
+                  Making{" "}
+                </span>
+                <span className="!text-[#ff78b7] [-webkit-text-fill-color:#ff78b7] [text-shadow:0_1px_0_rgba(255,225,238,0.45),0_2px_0_rgba(173,48,106,0.86),0_3px_0_rgba(91,31,62,0.92),0_7px_16px_rgba(0,0,0,0.55),0_0_26px_rgba(255,120,183,0.34)]">
+                  Neuroscience{" "}
                 </span>
                 <span className="text-[var(--color-text-primary)]">Accessible.</span>
               </motion.h1>

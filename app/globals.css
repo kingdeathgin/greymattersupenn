@@ -271,28 +271,3 @@ h3, .text-h3 {
 p + p {
   margin-top: var(--space-md);
 }
-
-/* Continuous articles marquee */
-@keyframes articles-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.articles-marquee-track {
-  animation: articles-marquee linear infinite;
-  will-change: transform;
-}
-
-.articles-marquee:hover .articles-marquee-track {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .articles-marquee-track {
-    animation: none;
-  }
-}

@@ -16,17 +16,6 @@ function formatPublishedDate(date: string) {
   }).format(new Date(`${date}T00:00:00Z`));
 }
 
-function buildMarqueeTrack(articles: Article[]): Article[] {
-  const minCards = 12;
-  const base: Article[] = [];
-
-  while (base.length < minCards) {
-    base.push(...articles);
-  }
-
-  return [...base, ...base];
-}
-
 function ArticleCard({ article }: { article: Article }) {
   return (
     <div className={CARD_CLASS}>
@@ -81,8 +70,7 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
   const recentArticles = [...articles]
     .filter((article) => article.slug !== featuredArticle.slug)
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-  const track = buildMarqueeTrack(recentArticles.length > 0 ? recentArticles : articles);
-  const durationSeconds = Math.max(track.length * 4, 48);
+  const archiveArticles = recentArticles.length > 0 ? recentArticles : articles;
 
   return (
     <section
@@ -244,13 +232,12 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
         </Link>
       </div>
 
-      <div className="relative z-10 articles-marquee overflow-hidden pl-4 md:pl-8">
-        <div
-          className="articles-marquee-track flex w-max"
-          style={{ animationDuration: `${durationSeconds}s` }}
-        >
-          {track.map((article, i) => (
-            <ArticleCard key={`${article.slug}-${i}`} article={article} />
+      <div className="relative z-10 overflow-x-auto pl-4 pb-4 md:pl-8 [scrollbar-width:thin] [scrollbar-color:var(--color-accent)_transparent]">
+        <div className="flex w-max snap-x snap-mandatory">
+          {archiveArticles.map((article) => (
+            <div key={article.slug} className="snap-start">
+              <ArticleCard article={article} />
+            </div>
           ))}
         </div>
       </div>
