@@ -12,31 +12,6 @@ const BrainCanvas = dynamic(
   }
 );
 
-const stats = [
-  { value: "50+", label: "Articles Published", className: "left-[4%] top-[30%] md:left-[10%]" },
-  { value: "12+", label: "Podcast Episodes", className: "right-[4%] top-[42%] md:right-[10%]" },
-  { value: "8", label: "Chapters Worldwide", className: "left-[12%] bottom-[18%] md:left-[18%]" },
-];
-
-function StatOrbit({
-  value,
-  label,
-  className,
-}: {
-  value: string;
-  label: string;
-  className: string;
-}) {
-  return (
-    <div
-      className={`absolute z-20 w-28 md:w-40 rounded-[var(--radius-md)] border border-[var(--color-accent)]/35 bg-[var(--color-bg)]/70 p-3 md:p-5 backdrop-blur-sm ${className}`}
-    >
-      <span className="block font-display text-2xl md:text-4xl font-light text-[var(--color-accent)]">{value}</span>
-      <span className="mt-1 block font-mono text-[9px] md:text-xs uppercase tracking-wider text-[var(--color-text-muted)]">{label}</span>
-    </div>
-  );
-}
-
 export function BrainStatsSection() {
   return (
     <section className="relative min-h-screen bg-[var(--color-bg)]" aria-label="Penn Grey Matters impact">
@@ -52,10 +27,6 @@ export function BrainStatsSection() {
         >
           <BrainCanvas />
         </div>
-
-        {stats.map((stat) => (
-          <StatOrbit key={stat.label} {...stat} />
-        ))}
 
       </div>
     </section>

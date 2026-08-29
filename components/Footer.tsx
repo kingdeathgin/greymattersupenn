@@ -6,7 +6,6 @@ const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/articles", label: "Articles" },
   { href: "/explore", label: "Grey Matter" },
-  { href: "/podcast", label: "Podcast" },
   { href: "/chapters", label: "Chapters" },
   { href: "/team", label: "Team" },
   { href: "/get-involved", label: "Get Involved" },
