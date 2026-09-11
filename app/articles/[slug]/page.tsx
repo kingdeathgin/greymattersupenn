@@ -153,11 +153,28 @@ function getContributors(author: string, artist: string) {
     });
 }
 
-function formatCitations(text: string) {
+function formatCitations(text: string, referenceCount: number) {
+  const isValidCitation = (value: string) => value
+    .split(/[\s,]+/)
+    .filter(Boolean)
+    .every((number) => Number(number) >= 1 && Number(number) <= referenceCount);
+
   const withCitationMarkers = text
-    .replace(/([a-z).,;:!?…”])\s*(\d{1,2}(?:\s*,\s*\d{1,2})*)(?=[.\s]|$)/g, "$1⟦$2⟧")
+    // References attached to a word have no intervening space. Keeping that
+    // boundary strict prevents prose such as "almost 80 years" from becoming
+    // a superscript.
+    .replace(/([a-z)])(\d{1,2}(?:\s*,\s*\d{1,2})*)(?=[.\s]|$)/g, (match, prefix, numbers) => (
+      isValidCitation(numbers) ? `${prefix}⟦${numbers}⟧` : match
+    ))
+    // Authors sometimes place a reference after punctuation or a closing
+    // quote, where optional whitespace is typographically normal.
+    .replace(/([.,;:!?…”])(\s*)(\d{1,2}(?:\s*,\s*\d{1,2})*)(?=[.\s]|$)/g, (match, punctuation, _space, numbers) => (
+      isValidCitation(numbers) ? `${punctuation}⟦${numbers}⟧` : match
+    ))
     .replace(/(\s)(\d{1,2}(?:\s+\d{1,2})+)(?=\s+[A-Z])/g, (_, space, numbers) => (
-      `${space}${numbers.split(/\s+/).map((number: string) => `⟦${number}⟧`).join("")}`
+      isValidCitation(numbers)
+        ? `${space}${numbers.split(/\s+/).map((number: string) => `⟦${number}⟧`).join("")}`
+        : `${space}${numbers}`
     ));
 
   return withCitationMarkers.split(/(⟦[\d,\s]+⟧)/g).map((part, index) => {
@@ -239,7 +256,7 @@ function ArticleBody({ slug }: { slug: string }) {
               <span className="mb-3 block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--color-accent)]">
                 Key idea
               </span>
-              {formatCitations(text)}
+              {formatCitations(text, references.length)}
             </aside>
           );
         }
@@ -250,7 +267,7 @@ function ArticleBody({ slug }: { slug: string }) {
               key={index}
               className="my-10 border-l-2 border-[var(--color-accent)] pl-6 font-display text-2xl leading-relaxed text-[var(--color-text-primary)] md:pl-8 md:text-3xl"
             >
-              {formatCitations(text)}
+              {formatCitations(text, references.length)}
             </blockquote>
           );
         }
@@ -259,7 +276,7 @@ function ArticleBody({ slug }: { slug: string }) {
 
         return (
           <div key={index}>
-            <p>{formatCitations(text)}</p>
+            <p>{formatCitations(text, references.length)}</p>
             {illustration && (
               <figure className="my-12 overflow-hidden rounded-sm border border-[var(--color-border)] bg-[var(--color-bg)] shadow-2xl shadow-black/20">
                 <Image

@@ -384,7 +384,9 @@ func drawNamesWithIcons(_ names: String, x: CGFloat, y: CGFloat, maxWidth: CGFlo
 func bodyText(_ text: String, attributes: [NSAttributedString.Key: Any], citationColor: NSColor = blue) -> NSMutableAttributedString {
     let result = NSMutableAttributedString(string: text, attributes: attributes)
     let patterns = [
-        "([a-z\\)\\.,;:!?…”])(\\d{1,2}(?:\\s*,\\s*\\d{1,2})*)(?=[.\\s]|$)",
+        // A reference following a word must be attached. This distinction
+        // keeps contextual numbers such as "almost 80 years" on the baseline.
+        "([a-z\\)])(\\d{1,2}(?:\\s*,\\s*\\d{1,2})*)(?=[.\\s]|$)",
         "([\\.,;:!?…”])\\s+(\\d{1,2}(?:\\s*,\\s*\\d{1,2})*)$",
     ]
     for pattern in patterns {
