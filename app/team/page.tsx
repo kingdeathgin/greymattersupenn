@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import Image from "next/image";
 import team from "@/data/team.json";
 
-const leadershipNames = ["Elgin Tawiah", "Livia De La Rosa", "Hans Manish"];
+const leadershipNames = ["Elgin Tawiah", "Elias Mekuriaw", "Livia De La Rosa", "Hans Manish"];
 const leadership = leadershipNames.flatMap((name) => team.filter((m) => m.name === name));
 const rest = team.filter((m) => !leadershipNames.includes(m.name));
 
