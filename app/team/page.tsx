@@ -3,9 +3,9 @@ import { Footer } from "@/components/Footer";
 import Image from "next/image";
 import team from "@/data/team.json";
 
-const leadershipRoles = ["Editor-in-Chief", "Director of Operations", "Director of Finance"];
-const leadership = team.filter((m) => leadershipRoles.includes(m.role));
-const rest = team.filter((m) => !leadershipRoles.includes(m.role));
+const leadershipNames = ["Elgin Tawiah", "Livia De La Rosa", "Hans Manish"];
+const leadership = leadershipNames.flatMap((name) => team.filter((m) => m.name === name));
+const rest = team.filter((m) => !leadershipNames.includes(m.name));
 
 export default function TeamPage() {
   return (
