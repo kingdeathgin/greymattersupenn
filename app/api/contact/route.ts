@@ -23,7 +23,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: "Penn Grey Matters <onboarding@resend.dev>",
-          to: [process.env.EDITORIAL_EMAIL || "editor@greymattersjournalpenn.org"],
+          to: ["elgin@sas.upenn.edu"],
           subject: `Get Involved: ${roleInterest} - ${name}`,
           html: `
             <p><strong>Name:</strong> ${name}</p>
@@ -41,8 +41,10 @@ export async function POST(request: Request) {
         throw new Error(err.message || "Resend API error");
       }
     } else {
-      // No Resend key - log for development
-      console.log("Contact form submission:", { name, email, university, roleInterest, message });
+      return NextResponse.json(
+        { error: "Message delivery is temporarily unavailable. Please try again later." },
+        { status: 503 }
+      );
     }
 
     return NextResponse.json({ success: true });

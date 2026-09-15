@@ -104,7 +104,7 @@ function UpdateForm({ onReset }: { onReset: () => void }) {
             {state.error && <p id="application-error" role="alert" className="mt-4 text-sm text-[var(--color-accent-gold)]">{state.error}</p>}
             <button disabled={pending} className="mt-5 w-full rounded-xl bg-[var(--color-accent)] px-6 py-4 font-mono text-sm text-[var(--color-bg)] hover:opacity-90 disabled:opacity-60 transition-opacity">{pending ? "Checking…" : "View my update"}</button>
           </form>
-          <p className="mt-6 font-body text-sm text-[var(--color-text-muted)]">Need a hand? <Link href="/contact" className="underline underline-offset-4 text-[var(--color-accent)]">Contact us</Link>.</p>
+          <p className="mt-6 font-body text-sm text-[var(--color-text-muted)]"><Link href="/contact" className="underline underline-offset-4 text-[var(--color-accent)]">Contact us</Link></p>
         </div>
       )}
     </section>
