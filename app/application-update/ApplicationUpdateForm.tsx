@@ -43,8 +43,17 @@ function UpdateForm({ onReset }: { onReset: () => void }) {
       ) : member ? (
         <div className="max-w-3xl w-full text-center">
           <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
-            {Array.from({ length: 36 }, (_, index) => (
-              <span key={index} className={styles.confetti} style={{ left: `${(index * 37) % 100}%`, backgroundColor: ["#00E5FF", "#9B5DE5", "#F4D35E"][index % 3], animationDelay: `${(index % 9) * 0.12}s`, animationDuration: `${3 + (index % 4) * 0.3}s` }} />
+            {Array.from({ length: 96 }, (_, index) => (
+              <span key={index} className={styles.confetti} style={{ left: `${(index * 37) % 100}%`, backgroundColor: ["#00E5FF", "#9B5DE5", "#F4D35E", "#FF80B5", "#7EF5C1"][index % 5], borderRadius: index % 3 === 0 ? "50%" : "2px", animationDelay: `${(index % 16) * 0.13}s`, animationDuration: `${3.5 + (index % 4) * 0.3}s` }} />
+            ))}
+            {Array.from({ length: 6 }, (_, burst) => (
+              <span key={`firework-${burst}`} className={styles.firework} style={{ left: `${[12, 86, 22, 78, 8, 92][burst]}%`, top: `${[10, 18, 34, 42, 57, 66][burst]}%`, color: ["#F4D35E", "#00E5FF", "#FF80B5"][burst % 3] }}>
+                {Array.from({ length: 12 }, (_, ray) => (
+                  <span key={ray} className={styles.ray} style={{ transform: `rotate(${ray * 30}deg)` }}>
+                    <i className={styles.spark} style={{ animationDelay: `${burst * 0.5 + 0.2}s` }} />
+                  </span>
+                ))}
+              </span>
             ))}
           </div>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent-gold)] mb-6">{member.returning ? "A new chapter, together" : "You’re in!"}</p>
