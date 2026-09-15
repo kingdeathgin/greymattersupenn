@@ -68,7 +68,7 @@ function UpdateForm({ onReset }: { onReset: () => void }) {
             </figcaption>
           </figure>
           <p className="font-body text-lg md:text-xl text-[var(--color-text-muted)] mt-7 max-w-xl mx-auto">
-            {member.returning ? "We’re so glad to have you back at Penn Grey Matters. Here’s to another chapter of curiosity, creativity, and sharing science together." : "I (Elgin Tawiah) have read your application and I would like to congratulate you on getting a position in Grey Matters at Penn. Your response stood out from other applicants, and your artifact was an amazing demonstration of qualities relevant to the very purpose of this club."}
+            {member.returning ? "We’re so glad to have you back at Penn Grey Matters. Here’s to another chapter of curiosity, creativity, and sharing science together." : "We have read your application, and we would like to congratulate you on getting a position in Grey Matters at Penn. Your response stood out from other applicants, and your artifact was an amazing demonstration of qualities relevant to the very purpose of this club."}
           </p>
           <div className="inline-block rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-surface)] px-10 py-6 mt-9">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">You have been assigned:</p>
