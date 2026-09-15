@@ -96,7 +96,7 @@ function UpdateForm({ onReset }: { onReset: () => void }) {
       ) : (
         <div className="max-w-xl w-full">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent)] mb-5">Penn Grey Matters</p>
-          <h1 className="font-display text-4xl md:text-6xl text-[var(--color-text-primary)]">Your next chapter starts here.</h1>
+          <h1 className="font-display text-4xl md:text-6xl text-[var(--color-text-primary)]">View your Application Decision</h1>
           <p className="font-body text-lg text-[var(--color-text-muted)] mt-6">Enter your email to view your application update. Returning members, your welcome-back message is here too.</p>
           <form action={action} className="mt-9">
             <label htmlFor="application-email" className="block font-mono text-sm text-[var(--color-text-primary)] mb-3">Email address</label>
