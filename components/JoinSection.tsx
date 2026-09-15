@@ -13,7 +13,7 @@ export function JoinSection() {
           Your major doesn&apos;t matter. Your curiosity does.
         </h2>
         <p className="font-body text-body-lg text-[var(--color-text-muted)] mb-[var(--space-xl)] max-w-xl mx-auto">
-          Writers, Designers, Researchers, Podcast Hosts, Developers — we want you.
+          Join our author, editor, artist, podcast, or social media team.
         </p>
         <Link
           href="/get-involved"

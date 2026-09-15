@@ -1,0 +1,51 @@
+import "server-only";
+
+// This roster stays on the server; only the matching member is returned.
+export const members: [email: string, name: string, role: string, returning: boolean][] = [
+  ["habibmh@sas.upenn.edu", "Miller Habib", "Artist", false],
+  ["mcunning@sas.upenn.edu", "Mia Cunningham", "Artist", false],
+  ["zimonli@sas.upenn.edu", "Zimon Li", "Artist", false],
+  ["echozhangmh@gmail.com", "Echo Zhang", "Artist", false],
+  ["dstein1@sas.upenn.edu", "Danielle Steinbach", "Author", false],
+  ["gramalho@sas.upenn.edu", "Giovana Lacerda", "Author", false],
+  ["chocaleb@sas.upenn.edu", "Caleb Choi", "Author", false],
+  ["brjang@sas.upenn.edu", "Brooklyn Jang", "Author", false],
+  ["tommym@sas.upenn.edu", "Tommy Molnar", "Author", false],
+  ["adarshra@engineering.upenn.edu", "Adarsh Ramamurthy", "Author", false],
+  ["smehta15@sas.upenn.edu", "Sohum Mehta", "Author", false],
+  ["alcx@sas.upenn.edu", "Augustus Clarke", "Author", true],
+  ["agilfond@sas.upenn.edu", "Alexandra Gilfond", "Author", true],
+  ["el106@sas.upenn.edu", "Eric Lin", "Editor", false],
+  ["anouchka@sas.upenn.edu", "Anouchka Fabert", "Editor", false],
+  ["kjshin@sas.upenn.edu", "Kaitlyn Shin", "Editor", false],
+  ["rdbailey@sas.upenn.edu", "Roberto Bailey", "Editor", false],
+  ["ksxiv@sas.upenn.edu", "Kyungdong Kim", "Editor", false],
+  ["roylao@sas.upenn.edu", "Roy Lao", "Editor", false],
+  ["ichen29@sas.upenn.edu", "Isabelle Chen", "Editor", true],
+  ["costea6@sas.upenn.edu", "Ioana-Maria", "Editor", true],
+  ["schavali@sas.upenn.edu", "Sahasra Chavali", "Podcast", false],
+  ["alkhaymo@sas.upenn.edu", "Mohammad Ahmad Saed Alkhayyat", "Podcast", false],
+  ["alybazzi@sas.upenn.edu", "Aly Bazzi", "Podcast", false],
+  ["eetawiah@seas.upenn.edu", "Emmanuel Tawiah", "Podcast", true],
+  ["ipeng@seas.upenn.edu", "Ian Peng", "Podcast", true],
+  ["ahandy@seas.upenn.edu", "Asim Handy", "Podcast", true],
+  ["kim03@sas.upenn.edu", "Jacob Jiho Kim", "Social Media", false],
+  ["thatb@sas.upenn.edu", "Thatcher Brown", "Social Media", true],
+  ["zalawa@sas.upenn.edu", "Zaid Alawa", "Social Media", true],
+  ["nziba@sas.upenn.edu", "Nanziba Tabassum", "Social Media", true],
+  ["ashinde@sas.upenn.edu", "Alaina Shinde", "Social Media", true],
+  ["fengpan@sas.upenn.edu", "Feng Pan", "Lead Editor", true],
+  ["hmanish@sas.upenn.edu", "Hans Manish", "Lead Editor", true],
+  ["livdlr21@sas.upenn.edu", "Livia De La Rosa", "Podcast Director", true],
+  ["eliasmek@sas.upenn.edu", "Elias Mekuriaw", "Co-Editor-in-Chief", true],
+];
+
+export const declinedMembers: Record<string, string> = {
+  "eveallafbanya@gmail.com": "Evealla Banya",
+  "rimsha@sas.upenn.edu": "Rimsha Ali",
+  "khushj@sas.upenn.edu": "Khush Jain",
+  "nickph@sas.upenn.edu": "Nickolas Phanchulidze",
+  "amydeng@sas.upenn.edu": "Amy Deng",
+  "ethanzh@sas.upenn.edu": "Ethan Zheng",
+};
+

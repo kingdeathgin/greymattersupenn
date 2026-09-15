@@ -1,10 +1,11 @@
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/nav/Navigation";
+import Link from "next/link";
 
 const APPLICATION_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSc7I3BGZ3JpGkf5zKyMBuqjDsCq-CwdV8mUsLcb05tBS51ILQ/viewform";
 
-const roles = ["Writers", "Designers", "Researchers", "Podcast Hosts", "Developers"];
+const roles = ["Authors", "Editors", "Artists", "Podcast", "Social Media"];
 
 export default function GetInvolvedPage() {
   return (
@@ -12,6 +13,10 @@ export default function GetInvolvedPage() {
       <Navigation />
       <main className="min-h-screen overflow-hidden pt-[var(--main-top-offset)] bg-[var(--color-bg)]">
         <section className="relative px-4 py-20 md:px-8 md:py-28">
+          <div className="relative max-w-[var(--wide-max)] mx-auto mb-12 rounded-xl border border-[var(--color-accent)]/25 bg-[var(--color-surface)] p-6 flex flex-wrap items-center justify-between gap-4">
+            <p className="font-body text-[var(--color-text-primary)]">Applied or returning to Penn Grey Matters? Your next chapter is here.</p>
+            <Link href="/application-update" className="font-mono text-sm text-[var(--color-accent)] underline underline-offset-4">Check application update →</Link>
+          </div>
           <div
             className="absolute inset-0 pointer-events-none opacity-70"
             aria-hidden="true"
@@ -70,21 +75,6 @@ export default function GetInvolvedPage() {
           </div>
         </section>
 
-        <section className="border-y border-[var(--color-accent)]/10 px-4 py-10 md:px-8">
-          <div className="max-w-[var(--wide-max)] mx-auto grid sm:grid-cols-3 gap-8 text-center sm:text-left">
-            {[
-              ["01", "Bring what you know", "We welcome experience, but you do not need it to get started."],
-              ["02", "Learn alongside people", "Work with a team of students who care about science and communication."],
-              ["03", "Make something useful", "Help turn research into work that more people can understand."],
-            ].map(([number, title, description]) => (
-              <div key={number}>
-                <p className="font-mono text-xs tracking-[0.2em] text-[var(--color-accent)]">{number}</p>
-                <h2 className="font-display text-xl font-light text-[var(--color-text-primary)] mt-3">{title}</h2>
-                <p className="font-body text-sm text-[var(--color-text-muted)] mt-2 max-w-xs mx-auto sm:mx-0">{description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
         <Footer />
       </main>
     </>

@@ -88,6 +88,26 @@ npm run dev
 | `NEXT_PUBLIC_SANITY_PROJECT_ID` | CMS |
 | `RESEND_API_KEY` | Contact / newsletter |
 | `EDITORIAL_EMAIL` | Where contact submissions go |
+| `APPLICATION_ADMIN_PASSWORD` | Password for Elgin’s private application confirmation dashboard |
+
+At `/application-update`, checking the acknowledgement box saves the applicant’s
+email and first confirmation time to the `APPLICATION_DB` Cloudflare D1 binding.
+No acknowledgement emails are sent. Entering `elgin@sas.upenn.edu` in the lookup
+opens `/application-update/admin`; a password is required before any names or
+confirmation data are returned. The dashboard shows all applicants and their
+confirmation status. Sessions expire after eight hours, and login attempts are
+limited to ten per client per fifteen minutes. Confirmations are self-reported,
+not verified email ownership or automatic page-view tracking.
+
+Provision a D1 database with `npx wrangler d1 create greymatters-application-confirmations`
+and put its ID in the `APPLICATION_DB` binding in `wrangler.jsonc`. Apply the schema
+with `npx wrangler d1 migrations apply APPLICATION_DB --remote` (or `--local` for
+development). Set `APPLICATION_ADMIN_PASSWORD` as a Worker secret and in
+`.env.local` for local development. A missing database causes a retryable error,
+never a false saved confirmation.
+
+Run `node scripts/test-application-acknowledgements.mjs` to check acknowledgement
+validation, admin access and signed sessions without sending emails.
 
 ---
 

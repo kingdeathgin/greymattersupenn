@@ -1,0 +1,18 @@
+.confetti {
+  position: absolute;
+  top: -24px;
+  width: 8px;
+  height: 16px;
+  opacity: 0;
+  animation: celebrate 3.5s ease-out forwards;
+}
+
+@keyframes celebrate {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+  85% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(85vh) rotate(540deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti { animation: none; }
+}
