@@ -14,6 +14,7 @@ export type ApplicationUpdate = {
 export async function checkApplication(
   _previous: ApplicationUpdate,
   formData: FormData,
+): Promise<ApplicationUpdate> {
   const value = formData.get("email");
   if (typeof value !== "string" || value.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
     return { error: "Please enter a valid email address." };
