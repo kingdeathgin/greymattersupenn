@@ -6,6 +6,7 @@ export const members: [email: string, name: string, role: string, returning: boo
   ["mcunning@sas.upenn.edu", "Mia Cunningham", "Artist", false],
   ["zimonli@sas.upenn.edu", "Zimon Li", "Artist", false],
   ["echozhangmh@gmail.com", "Echo Zhang", "Artist", false],
+  ["chenyuki@sas.upenn.edu", "Yuki Chen", "Artist", false],
   ["dstein1@sas.upenn.edu", "Danielle Steinbach", "Author", false],
   ["gramalho@sas.upenn.edu", "Giovana Lacerda", "Author", false],
   ["chocaleb@sas.upenn.edu", "Caleb Choi", "Author", false],
@@ -48,4 +49,3 @@ export const declinedMembers: Record<string, string> = {
   "amydeng@sas.upenn.edu": "Amy Deng",
   "ethanzh@sas.upenn.edu": "Ethan Zheng",
 };
-

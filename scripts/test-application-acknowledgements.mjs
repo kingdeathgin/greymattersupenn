@@ -39,9 +39,9 @@ for (const email of [...roster.members.map(m => m[0]), ...Object.keys(roster.dec
   assert.equal((await actions.acknowledgeApplication(` ${email.toUpperCase()} `, {}, checked)).success, true);
   assert.ok(saved.has(email));
 }
-assert.equal(saved.size, 42);
+assert.equal(saved.size, 43);
 await actions.acknowledgeApplication('habibmh@sas.upenn.edu', {}, checked);
-assert.equal(saved.size, 42);
+assert.equal(saved.size, 43);
 failSave = true;
 assert.ok((await actions.acknowledgeApplication('habibmh@sas.upenn.edu', {}, checked)).error);
 assert.equal(admin.passwordsMatch('abc', 'abc'), true);
@@ -58,4 +58,4 @@ cookie = { value: token };
 assert.equal(await admin.isApplicationAdmin(), true);
 delete env.APPLICATION_ADMIN_PASSWORD;
 assert.equal(await admin.isApplicationAdmin(), false);
-console.log('Passed: all 42 applicants, checkbox validation, normalization, save failures, admin redirect, password comparison, signed session expiry/tampering, and unauthenticated access.');
+console.log('Passed: all 43 applicants, checkbox validation, normalization, save failures, admin redirect, password comparison, signed session expiry/tampering, and unauthenticated access.');
