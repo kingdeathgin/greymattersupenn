@@ -18,14 +18,12 @@ export const members: [email: string, name: string, role: string, returning: boo
   ["agilfond@sas.upenn.edu", "Alexandra Gilfond", "Author", true],
   ["el106@sas.upenn.edu", "Eric Lin", "Editor", false],
   ["anouchka@sas.upenn.edu", "Anouchka Fabert", "Editor", false],
-  ["kjshin@sas.upenn.edu", "Kaitlyn Shin", "Editor", false],
   ["rdbailey@sas.upenn.edu", "Roberto Bailey", "Editor", false],
   ["ksxiv@sas.upenn.edu", "Kyungdong Kim", "Editor", false],
   ["roylao@sas.upenn.edu", "Roy Lao", "Editor", false],
   ["ichen29@sas.upenn.edu", "Isabelle Chen", "Editor", true],
   ["costea6@sas.upenn.edu", "Ioana-Maria", "Editor", true],
   ["schavali@sas.upenn.edu", "Sahasra Chavali", "Podcast", false],
-  ["alkhaymo@sas.upenn.edu", "Mohammad Ahmad Saed Alkhayyat", "Podcast", false],
   ["alybazzi@sas.upenn.edu", "Aly Bazzi", "Podcast", false],
   ["eetawiah@seas.upenn.edu", "Emmanuel Tawiah", "Podcast", true],
   ["ipeng@seas.upenn.edu", "Ian Peng", "Podcast", true],
@@ -42,6 +40,8 @@ export const members: [email: string, name: string, role: string, returning: boo
 ];
 
 export const declinedMembers: Record<string, string> = {
+  "kjshin@sas.upenn.edu": "Kaitlyn Shin",
+  "alkhaymo@sas.upenn.edu": "Mohammad Ahmad Saed Alkhayyat",
   "eveallafbanya@gmail.com": "Evealla Banya",
   "rimsha@sas.upenn.edu": "Rimsha Ali",
   "khushj@sas.upenn.edu": "Khush Jain",

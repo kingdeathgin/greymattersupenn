@@ -30,6 +30,14 @@ const admin = load('lib/application-admin.ts', {
 const checked = new FormData();
 checked.set('acknowledged', 'yes');
 
+for (const [email, name] of [['kjshin@sas.upenn.edu', 'Kaitlyn Shin'], ['alkhaymo@sas.upenn.edu', 'Mohammad Ahmad Saed Alkhayyat']]) {
+  const form = new FormData();
+  form.set('email', email);
+  const result = await actions.checkApplication({}, form);
+  assert.equal(result.declinedName, name);
+  assert.equal(result.member, undefined);
+}
+
 await assert.rejects(async () => { const form = new FormData(); form.set('email', ' ELGIN@SAS.UPENN.EDU '); await actions.checkApplication({}, form); }, /REDIRECT:\/application-update\/admin/);
 assert.ok((await actions.acknowledgeApplication('habibmh@sas.upenn.edu', {}, new FormData())).error);
 assert.ok((await actions.acknowledgeApplication('unknown@example.com', {}, checked)).error);
