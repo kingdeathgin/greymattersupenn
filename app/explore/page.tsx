@@ -15,7 +15,7 @@ export default function ExplorePage() {
               Grey Matter
             </h1>
             <p className="font-body text-[var(--color-text-muted)] text-lg mb-12 max-w-2xl">
-              An interactive brain explorer. Click on a region to learn about its functions, related conditions, and surprising facts.
+              Explore the brain in 3D. Hover or tap a color to identify its approximate region, drag to rotate, or choose a region from the list to learn more.
             </p>
 
             <GreyMatterExplorer />

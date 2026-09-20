@@ -14,8 +14,8 @@ const BrainCanvas = dynamic(
 
 export function BrainStatsSection() {
   return (
-    <section className="relative min-h-screen bg-[var(--color-bg)]" aria-label="Penn Grey Matters impact">
-      <div className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-[100svh] bg-[var(--color-bg)]" aria-label="Penn Grey Matters impact">
+      <div className="relative min-h-[100svh] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,229,255,0.13),transparent_62%)]" />
         <div className="absolute top-16 left-0 right-0 z-20 px-6 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">Penn Grey Matters</p>
