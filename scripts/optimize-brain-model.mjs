@@ -65,15 +65,13 @@ for (const mesh of gltf.meshes) {
     const positions = readAccessor(primitive.attributes.POSITION, 3, 4);
     const colors = readAccessor(primitive.attributes.COLOR_0, 4, 2);
     const indices = readIndices(primitive.indices);
-    let chosen = indices;
-    if (mesh.name === "Quad Sphere") {
-      const colorFloats = new Float32Array(colors.length);
-      for (let i = 0; i < colors.length; i++) colorFloats[i] = colors[i] / 65535;
-      [chosen] = MeshoptSimplifier.simplifyWithAttributes(
-        indices, positions, 3, colorFloats, 4, [1, 1, 1, 0], null,
-        Math.floor(indices.length * 0.22 / 3) * 3, 0.02, ["LockBorder"]
-      );
-    }
+    const colorFloats = new Float32Array(colors.length);
+    for (let i = 0; i < colors.length; i++) colorFloats[i] = colors[i] / 65535;
+    const ratio = mesh.name === "Quad Sphere" ? 0.1 : 0.3;
+    const [chosen] = MeshoptSimplifier.simplifyWithAttributes(
+      indices, positions, 3, colorFloats, 4, [1, 1, 1, 0], null,
+      Math.floor(indices.length * ratio / 3) * 3, 0.025, ["LockBorder"]
+    );
     const remap = new Map();
     const compactPositions = [];
     const compactColors = [];
