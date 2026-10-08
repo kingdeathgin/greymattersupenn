@@ -20,7 +20,7 @@ export default async function BubblePage() {
     <main className="min-h-screen bg-[#f6f2e9] px-4 py-8 text-[#243b36] sm:px-8">
       <div className="mx-auto max-w-6xl space-y-5">
         <header className="space-y-2">
-          <p className="text-sm font-bold uppercase tracking-widest">4-minute activity</p>
+          <p className="text-sm font-bold uppercase tracking-widest">5-minute activity</p>
           <h1 className="text-4xl font-bold sm:text-5xl">Draw your bubble.</h1>
           <p>Your bubble is what makes your everyday experience feel normal.</p>
         </header>

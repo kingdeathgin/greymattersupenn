@@ -21,7 +21,9 @@ The map groups by state, lists cities, has Alaska/Hawaii insets, and refreshes e
 and the reference drawing, excluding the reference itself. Untagged legacy drawings
 remain visible but unscored. Geographic distance does not affect similarity.
 
-Before deploying this feature, apply the additive production migration:
+`npm run deploy` builds the site, applies pending production database migrations,
+and only then deploys the Worker. Local development migrations do not update the
+production database. To repair an already deployed database separately:
 
 ```sh
 npx wrangler d1 migrations apply APPLICATION_DB --remote

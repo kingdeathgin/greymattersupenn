@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "preview": "npm run build && opennextjs-cloudflare preview",
-    "deploy": "npm run build && opennextjs-cloudflare deploy",
+    "deploy": "npm run build && wrangler d1 migrations apply APPLICATION_DB --remote && opennextjs-cloudflare deploy",
     "upload": "npm run build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
