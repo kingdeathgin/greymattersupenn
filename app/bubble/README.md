@@ -1,6 +1,7 @@
 # Bubble activity
 
-`/` temporarily redirects to `/bubble`. The original homepage remains intact.
+The activity has ended. `/` serves the regular homepage, and `/bubble` and all
+its subpaths temporarily redirect to `/`. Saved submissions remain in D1.
 
 Students draw, enter their name, city, US home state, and 1–3 drawing themes, and submit to Cloudflare D1.
 A seven-day HttpOnly receipt cookie restores their saved drawing on the same

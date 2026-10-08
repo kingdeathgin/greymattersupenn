@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: process.cwd(),
   async redirects() {
-    return [{ source: "/", destination: "/bubble", permanent: false }];
+    return [{ source: "/bubble/:path*", destination: "/", permanent: false }];
   },
   turbopack: {
     root: process.cwd(),
