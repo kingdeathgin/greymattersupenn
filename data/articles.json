@@ -10,7 +10,7 @@
     "readingTime": 26,
     "publishedAt": "2025-08-31",
     "image": "/images/articles/truth-behind-intelligence-cover.png",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "written-in-our-genes",
@@ -88,7 +88,7 @@
     "readingTime": 10,
     "publishedAt": "2026-10-09",
     "image": "/images/articles/the-changing-weather-within-cover.png",
-    "featured": false,
+    "featured": true,
     "comingSoon": false
   }
 ]

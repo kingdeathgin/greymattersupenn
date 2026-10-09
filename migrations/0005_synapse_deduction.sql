@@ -1,0 +1,1 @@
+ALTER TABLE synapse_runs ADD COLUMN guesses TEXT NOT NULL DEFAULT '[]';

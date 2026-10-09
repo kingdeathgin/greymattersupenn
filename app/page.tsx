@@ -6,6 +6,8 @@ import { Preloader } from "@/components/Preloader";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { ArticlesRow } from "@/components/articles/ArticlesRow";
 import { SocialFeature } from "@/components/SocialFeature";
+import { CollaborationFeature } from "@/components/CollaborationFeature";
+import { GameFeature } from "@/components/games/GameFeature";
 import { NeuronNetworkSection } from "@/components/neuron-network/NeuronNetworkSection";
 import { BrainStatsSection } from "@/components/explore/BrainStatsSection";
 import articles from "@/data/articles.json";
@@ -33,7 +35,9 @@ export default function HomePage() {
         <Preloader visible={preloaderVisible} />
         <NeuronNetworkSection />
         <ArticlesRow articles={articles} />
+        <CollaborationFeature />
         <SocialFeature />
+        <GameFeature />
         <BrainStatsSection />
         <JoinSection />
         <Footer />

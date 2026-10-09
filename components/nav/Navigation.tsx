@@ -7,6 +7,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/articles", label: "Articles" },
+  { href: "/synapse-sprint", label: "Play" },
   { href: "/chapters", label: "Chapters" },
   { href: "/team", label: "Team" },
   { href: "/about", label: "About" },
@@ -31,7 +32,7 @@ export function Navigation() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-[var(--space-lg)] font-mono text-sm uppercase text-[var(--color-text-muted)]" style={{ letterSpacing: "0.08em" }}>
+        <ul className="hidden lg:flex items-center gap-[var(--space-lg)] font-mono text-sm uppercase text-[var(--color-text-muted)]" style={{ letterSpacing: "0.08em" }}>
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -47,7 +48,7 @@ export function Navigation() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="md:hidden p-2 text-[var(--color-text-primary)]"
+          className="lg:hidden p-2 text-[var(--color-text-primary)]"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
@@ -67,7 +68,7 @@ export function Navigation() {
       {mobileOpen && (
         <div
           id="mobile-navigation"
-          className="relative z-10 -mx-4 px-4 md:hidden overflow-hidden bg-[var(--color-bg)] shadow-[0_18px_32px_rgba(0,0,0,0.45)] animate-in fade-in slide-in-from-top-2 duration-200"
+          className="relative z-10 -mx-4 px-4 lg:hidden overflow-hidden bg-[var(--color-bg)] shadow-[0_18px_32px_rgba(0,0,0,0.45)] animate-in fade-in slide-in-from-top-2 duration-200"
         >
           <ul className="flex flex-col gap-[var(--space-md)] py-[var(--space-lg)] font-mono text-sm uppercase text-[var(--color-text-muted)]" style={{ letterSpacing: "0.08em" }}>
             {navLinks.map((link) => (
