@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Navigation } from "@/components/nav/Navigation";
 import { Preloader } from "@/components/Preloader";
 import { HeroSection } from "@/components/hero/HeroSection";
+import { IssueTwoPreview } from "@/components/articles/IssueTwoPreview";
 import { ArticlesRow } from "@/components/articles/ArticlesRow";
 import { SocialFeature } from "@/components/SocialFeature";
 import { CollaborationFeature } from "@/components/CollaborationFeature";
@@ -34,6 +35,7 @@ export default function HomePage() {
         <HeroSection expanded={heroExpanded} />
         <Preloader visible={preloaderVisible} />
         <NeuronNetworkSection />
+        <IssueTwoPreview />
         <ArticlesRow articles={articles} />
         <CollaborationFeature />
         <SocialFeature />

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/nav/Navigation";
 import { Footer } from "@/components/Footer";
+import { IssueTwoPreview } from "@/components/articles/IssueTwoPreview";
 import articles from "@/data/articles.json";
 
 export default function ArticlesPage() {
@@ -18,6 +19,8 @@ export default function ArticlesPage() {
             </p>
           </div>
         </header>
+
+        <IssueTwoPreview />
 
         <section className="px-4 pb-16 md:px-8 md:pb-24" aria-labelledby="issue-one-heading">
           <div className="mx-auto grid max-w-[var(--wide-max)] items-center gap-10 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-accent)]/20 bg-[var(--color-surface)] p-5 shadow-2xl md:grid-cols-[minmax(18rem,0.72fr)_1.28fr] md:gap-14 md:p-10 lg:p-14">
