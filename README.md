@@ -35,13 +35,13 @@ Built with Next.js 15, TypeScript, Tailwind v4, Framer Motion, and React Three F
 
 **Grey Matter** (`/explore`) — drag to rotate a 3D brain, click regions in the side panel (hippocampus, amygdala, prefrontal cortex, etc.) for functions and facts. Same layout shows up on the homepage. See [Grey Matter](#grey-matter) below.
 
-**Podcast & Research** — Grey Frequencies (`/podcast`) and Research Spotlight (`/research`). Pages are built with coming-soon layouts; episodes and faculty spotlights get added when they're ready.
+**Podcast & Research** — Brains Click (`/podcast`) and Research Spotlight (`/research`). Pages are built with coming-soon layouts; episodes and faculty spotlights get added when they're ready.
 
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="media/podcast_page.png" alt="Grey Frequencies podcast page" width="100%"><br>
-      <sub><code>/podcast</code> · Grey Frequencies</sub>
+      <img src="media/podcast_page.png" alt="Brains Click podcast page" width="100%"><br>
+      <sub><code>/podcast</code> · Brains Click</sub>
     </td>
     <td align="center" width="50%">
       <img src="media/research_page.png" alt="Research spotlight page" width="100%"><br>

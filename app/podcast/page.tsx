@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { PodcastFeature } from "@/components/PodcastFeature";
 
 export const metadata: Metadata = {
-  title: "Grey Frequencies Podcast | Penn Grey Matters",
+  title: "Brains Click Podcast | Penn Grey Matters",
   description: "Our first interview is with Penn neuroscientist and bioengineer Konrad Kording, scheduled for November 9, 2026. Episode forthcoming.",
 };
 export default function PodcastPage() {

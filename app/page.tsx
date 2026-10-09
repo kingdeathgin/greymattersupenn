@@ -38,8 +38,8 @@ export default function HomePage() {
         <NeuronNetworkSection />
         <IssueTwoPreview />
         <ArticlesRow articles={articles} />
-        <PodcastFeature />
         <CollaborationFeature />
+        <PodcastFeature />
         <SocialFeature />
         <GameFeature />
         <BrainStatsSection />
