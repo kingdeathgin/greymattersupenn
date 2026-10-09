@@ -6,6 +6,7 @@ import { Preloader } from "@/components/Preloader";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { IssueTwoPreview } from "@/components/articles/IssueTwoPreview";
 import { ArticlesRow } from "@/components/articles/ArticlesRow";
+import { PodcastFeature } from "@/components/PodcastFeature";
 import { SocialFeature } from "@/components/SocialFeature";
 import { CollaborationFeature } from "@/components/CollaborationFeature";
 import { GameFeature } from "@/components/games/GameFeature";
@@ -37,6 +38,7 @@ export default function HomePage() {
         <NeuronNetworkSection />
         <IssueTwoPreview />
         <ArticlesRow articles={articles} />
+        <PodcastFeature />
         <CollaborationFeature />
         <SocialFeature />
         <GameFeature />

@@ -5,6 +5,7 @@ import Link from "next/link";
 const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/articles", label: "Articles" },
+  { href: "/podcast", label: "Podcast" },
   { href: "/mindwalk", label: "Mindwalk" },
   { href: "/explore", label: "Grey Matter" },
   { href: "/chapters", label: "Chapters" },

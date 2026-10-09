@@ -1,62 +1,12 @@
+import type { Metadata } from "next";
 import { Navigation } from "@/components/nav/Navigation";
 import { Footer } from "@/components/Footer";
-import { ContentComingSoon } from "@/components/content/ContentComingSoon";
+import { PodcastFeature } from "@/components/PodcastFeature";
 
-const features = [
-  {
-    title: "Faculty conversations",
-    description:
-      "Long-form interviews with Penn neuroscience researchers on their work, discoveries, and what drew them to the brain.",
-  },
-  {
-    title: "Accessible deep dives",
-    description:
-      "Complex topics broken down without dumbing them down — built for curious students and lifelong learners alike.",
-  },
-  {
-    title: "New episodes regularly",
-    description:
-      "We're building a library of conversations across cognition, disease, technology, and the mind.",
-  },
-];
-
-const placeholders = [
-  {
-    tag: "Episode 01",
-    title: "Inside the lab",
-    subtitle: "A Penn faculty member on what neuroscience research looks like day to day.",
-  },
-  {
-    tag: "Episode 02",
-    title: "Memory & the mind",
-    subtitle: "How we study learning, forgetting, and what makes memories stick.",
-  },
-  {
-    tag: "Episode 03",
-    title: "From bench to bedside",
-    subtitle: "Translating brain science into treatments that help real patients.",
-  },
-];
-
+export const metadata: Metadata = {
+  title: "Grey Frequencies Podcast | Penn Grey Matters",
+  description: "Our first interview is with Penn neuroscientist and bioengineer Konrad Kording, scheduled for November 9, 2026. Episode forthcoming.",
+};
 export default function PodcastPage() {
-  return (
-    <>
-      <Navigation />
-      <main className="min-h-screen pt-[var(--main-top-offset)]">
-        <ContentComingSoon
-          label="Podcast"
-          title="Grey Frequencies"
-          description="Conversations with Penn faculty and researchers — neuroscience explained through the people who study it."
-          features={features}
-          placeholders={placeholders}
-          ctaTitle="Want to host or produce?"
-          ctaDescription="We're looking for podcast hosts, audio editors, and interviewers. No experience required — just curiosity."
-          ctaHref="/get-involved"
-          ctaLabel="Get Involved"
-          visual="podcast"
-        />
-        <Footer />
-      </main>
-    </>
-  );
+  return <><Navigation /><main className="podcast-page min-h-screen pt-[var(--main-top-offset)]"><PodcastFeature fullPage /></main><Footer /></>;
 }
