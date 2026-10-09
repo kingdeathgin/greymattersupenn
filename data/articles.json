@@ -81,14 +81,14 @@
     "slug": "feeling-our-age",
     "title": "Feeling Our Age",
     "subtitle": "How Emotion Changes Across the Lifespan",
-    "excerpt": "How emotional experience, expression, and regulation evolve from youth through older adulthood.",
+    "excerpt": "Why recognizing emotions can become harder with age—and how lived experience, emotional regulation, and a focus on the positive reshape our emotional lives.",
     "category": "Emotion & Aging",
     "author": "Elgin Tawiah",
     "artist": "Elgin Tawiah",
-    "readingTime": 0,
-    "publishedAt": "2026-08-11",
+    "readingTime": 10,
+    "publishedAt": "2026-10-09",
     "image": "/images/articles/the-changing-weather-within-cover.png",
     "featured": false,
-    "comingSoon": true
+    "comingSoon": false
   }
 ]

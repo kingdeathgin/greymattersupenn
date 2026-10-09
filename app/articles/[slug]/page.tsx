@@ -9,6 +9,11 @@ import { articleBodies } from "@/data/article-bodies";
 import team from "@/data/team.json";
 
 const sectionHeadings = new Set([
+  "Meet Maria",
+  "Defining Emotion",
+  "Recognizing Emotions Becomes more Difficult",
+  "The Aging Emotional Brain",
+  "Older adults focus on Positive Emotions",
   "What is Intellectual Prime?",
   "Neurological Basis of Intelligence",
   "Psychological Basis of Intelligence",
@@ -26,6 +31,10 @@ const sectionHeadings = new Set([
 ]);
 
 const importantPassageStarts: Record<string, string[]> = {
+  "feeling-our-age": [
+    "Older adults have a harder time recognizing negative valence emotions",
+    "An important limitation with prior studies needs to be addressed",
+  ],
   "truth-behind-intelligence": [
     "While these trends provide key information",
     "Intelligence should not be viewed as a static concept",
@@ -48,6 +57,7 @@ const importantPassageStarts: Record<string, string[]> = {
 };
 
 const articleSummaries: Record<string, string> = {
+  "feeling-our-age": "Aging can make some emotions harder to recognize in faces, voices, and body language, while lived experience and context can support emotional understanding. Changes in brain networks, emotional regulation, attention, and memory may help explain older adults’ greater focus on positive experiences.",
   "truth-behind-intelligence": "Intelligence does not peak at one universal age or arise from a single trait. Brain development balances growth, pruning, and efficiency, while genes, learning, nutrition, exercise, and environment all shape cognitive potential over time.",
   "written-in-our-genes": "Genes strongly influence cognition, personality, and vulnerability to addiction, but they do not determine a life outcome. Epigenetics, education, support, and lived experience influence how genetic predispositions are expressed.",
   "altered-mitochondrial-trafficking": "Mitochondria must travel through neurons to supply energy and regulate calcium at synapses. When this transport fails, it can contribute to the synaptic dysfunction and cell loss seen in Alzheimer’s, Parkinson’s, and Huntington’s disease.",
@@ -57,6 +67,18 @@ const articleSummaries: Record<string, string> = {
 };
 
 const articleIllustrations: Record<string, Array<{ after: string; src: string; alt: string }>> = {
+  "feeling-our-age": [
+    {
+      after: "In light of the neurological findings",
+      src: "/images/articles/inline/feeling-our-age-emotions.png",
+      alt: "Watercolor illustration of sad, neutral, and happy faces in blue, purple, and orange",
+    },
+    {
+      after: "From here, Paul Ekman defined six universal emotions",
+      src: "/images/articles/inline/feeling-our-age-face-v2.png",
+      alt: "Hand-drawn face with watercolor shading around the eyes and mouth, regions used to recognize emotions",
+    },
+  ],
   "truth-behind-intelligence": [
     {
       after: "Newton did it all in 18 months.",
@@ -153,13 +175,13 @@ function getContributors(author: string, artist: string) {
     });
 }
 
-function formatCitations(text: string, referenceCount: number) {
+function formatCitations(text: string, referenceCount: number, explicitOnly = false) {
   const isValidCitation = (value: string) => value
     .split(/[\s,]+/)
     .filter(Boolean)
     .every((number) => Number(number) >= 1 && Number(number) <= referenceCount);
 
-  const withCitationMarkers = text
+  const withCitationMarkers = explicitOnly ? text : text
     // References attached to a word have no intervening space. Keeping that
     // boundary strict prevents prose such as "almost 80 years" from becoming
     // a superscript.
@@ -177,8 +199,8 @@ function formatCitations(text: string, referenceCount: number) {
         : `${space}${numbers}`
     ));
 
-  return withCitationMarkers.split(/(⟦[\d,\s]+⟧)/g).map((part, index) => {
-    const citation = part.match(/^⟦([\d,\s]+)⟧$/);
+  return withCitationMarkers.split(/(⟦[\d,\s-]+⟧)/g).map((part, index) => {
+    const citation = part.match(/^⟦([\d,\s-]+)⟧$/);
     return citation ? (
       <sup key={index} className="ml-0.5 align-super font-mono text-[0.65em] leading-none text-[var(--color-accent)]">
         {citation[1]}
@@ -256,7 +278,7 @@ function ArticleBody({ slug }: { slug: string }) {
               <span className="mb-3 block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--color-accent)]">
                 Key idea
               </span>
-              {formatCitations(text, references.length)}
+              {formatCitations(text, references.length, slug === "feeling-our-age")}
             </aside>
           );
         }
@@ -267,7 +289,7 @@ function ArticleBody({ slug }: { slug: string }) {
               key={index}
               className="my-10 border-l-2 border-[var(--color-accent)] pl-6 font-display text-2xl leading-relaxed text-[var(--color-text-primary)] md:pl-8 md:text-3xl"
             >
-              {formatCitations(text, references.length)}
+              {formatCitations(text, references.length, slug === "feeling-our-age")}
             </blockquote>
           );
         }
@@ -275,8 +297,8 @@ function ArticleBody({ slug }: { slug: string }) {
         const illustration = illustrations.find(({ after }) => text.startsWith(after));
 
         return (
-          <div key={index}>
-            <p>{formatCitations(text, references.length)}</p>
+          <div key={index} className="mb-6 md:mb-8">
+            <p>{formatCitations(text, references.length, slug === "feeling-our-age")}</p>
             {illustration && (
               <figure className="my-12 overflow-hidden rounded-sm border border-[var(--color-border)] bg-[var(--color-bg)] shadow-2xl shadow-black/20">
                 <Image
@@ -367,6 +389,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <span>•</span>
                 <time dateTime={article.publishedAt}>
                   {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                    timeZone: "UTC",
                     year: "numeric",
                     month: "long",
                     day: "numeric",
