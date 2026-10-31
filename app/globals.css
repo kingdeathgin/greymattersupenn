@@ -153,6 +153,29 @@ body {
   letter-spacing: var(--tracking-normal);
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: calc(var(--z-cursor) + 1);
+  transform: translateY(calc(-100% - 1rem));
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1rem;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+main[id="main-content"] {
+  scroll-margin-top: var(--main-top-offset);
+}
+
 /* Ensure inputs, buttons, selects inherit body font */
 input, button, select, textarea, label {
   font-family: inherit;
@@ -226,6 +249,10 @@ input, button, select, textarea, label {
   .journal-written-s-stroke {
     animation: none;
     stroke-dashoffset: 0;
+  }
+
+  .journal-pencil {
+    display: none;
   }
 
   .journal-graphite-dust {

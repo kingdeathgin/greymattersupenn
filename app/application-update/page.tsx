@@ -12,7 +12,7 @@ export default function ApplicationUpdatePage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-[var(--main-top-offset)]">
+      <main id="main-content" tabIndex={-1} className="min-h-screen pt-[var(--main-top-offset)]">
         <ApplicationUpdateForm />
         <Footer />
       </main>

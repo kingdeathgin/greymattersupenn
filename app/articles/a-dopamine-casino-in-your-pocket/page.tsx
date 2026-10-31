@@ -14,5 +14,5 @@ export const metadata: Metadata = {
   },
 };
 export default function UpcomingArticlePage() {
-  return <><Navigation /><main className="issue-two-page pt-[var(--main-top-offset)]"><IssueTwoPreview fullPage /></main><Footer /></>;
+  return <><Navigation /><main id="main-content" tabIndex={-1} className="issue-two-page pt-[var(--main-top-offset)]"><IssueTwoPreview fullPage /></main><Footer /></>;
 }

@@ -11,7 +11,7 @@ export default function GetInvolvedPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen overflow-hidden pt-[var(--main-top-offset)] bg-[var(--color-bg)]">
+      <main id="main-content" tabIndex={-1} className="min-h-screen overflow-hidden pt-[var(--main-top-offset)] bg-[var(--color-bg)]">
         <section className="relative px-4 py-20 md:px-8 md:py-28">
           <div className="relative max-w-[var(--wide-max)] mx-auto mb-12 rounded-xl border border-[var(--color-accent)]/25 bg-[var(--color-surface)] p-6 flex flex-wrap items-center justify-between gap-4">
             <p className="font-body text-[var(--color-text-primary)]">Applied or returning to Penn Grey Matters? Your next chapter is here.</p>

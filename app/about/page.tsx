@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-[var(--main-top-offset)]">
+      <main id="main-content" tabIndex={-1} className="min-h-screen pt-[var(--main-top-offset)]">
         <section className="py-4 md:py-6 px-[var(--section-padding-x)]">
           <div className="max-w-[var(--content-max)] mx-auto">
             <h1 className="font-display text-[var(--color-text-primary)] mb-[var(--space-xl)]" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 300 }}>

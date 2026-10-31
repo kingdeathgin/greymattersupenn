@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Navigation />
-      <main className="home-page">
+      <main id="main-content" tabIndex={-1} className="home-page">
         <HeroSection />
         <IssueTwoPreview />
         <ArticlesRow articles={articles} />

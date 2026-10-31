@@ -42,7 +42,7 @@ export default function ResearchPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-[var(--main-top-offset)]">
+      <main id="main-content" tabIndex={-1} className="min-h-screen pt-[var(--main-top-offset)]">
         <ContentComingSoon
           label="Research"
           title="Research Spotlight"

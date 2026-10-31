@@ -15,7 +15,7 @@ export default async function ApplicationAdminPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-[var(--main-top-offset)] px-4 md:px-8 text-[var(--color-text-primary)]">
+      <main id="main-content" tabIndex={-1} className="min-h-screen pt-[var(--main-top-offset)] px-4 md:px-8 text-[var(--color-text-primary)]">
         <section className="max-w-6xl mx-auto py-16">
           <h1 className="font-display text-4xl">Application confirmations</h1>
           {authorized ? <ConfirmationList /> : <AdminLogin />}

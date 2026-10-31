@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default async function BubblePage() {
   const submission = await currentSubmission().catch(() => null);
   return (
-    <main className="min-h-screen bg-[#f6f2e9] px-4 py-8 text-[#243b36] sm:px-8">
+    <main id="main-content" tabIndex={-1} className="min-h-screen bg-[#f6f2e9] px-4 py-8 text-[#243b36] sm:px-8">
       <div className="mx-auto max-w-6xl space-y-5">
         <header className="space-y-2">
           <p className="text-sm font-bold uppercase tracking-widest">5-minute activity</p>

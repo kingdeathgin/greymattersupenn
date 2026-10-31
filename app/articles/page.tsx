@@ -9,7 +9,7 @@ export default function ArticlesPage() {
   return (
     <>
       <Navigation />
-      <main className="bg-[var(--color-bg)] pt-[var(--main-top-offset)]">
+      <main id="main-content" tabIndex={-1} className="bg-[var(--color-bg)] pt-[var(--main-top-offset)]">
         <header className="px-4 pb-8 pt-4 md:px-8 md:pb-12 md:pt-8">
           <div className="mx-auto max-w-[var(--wide-max)]">
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">The archive</p>

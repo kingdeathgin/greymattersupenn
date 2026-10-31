@@ -8,5 +8,5 @@ export const metadata: Metadata = {
   description: "Our podcast with Dr. Kacy Cullen was recorded October 30, 2026 and comes out in mid-November. Konrad Kording is up next.",
 };
 export default function PodcastPage() {
-  return <><Navigation /><main className="podcast-page min-h-screen pt-[var(--main-top-offset)]"><PodcastFeature fullPage /></main><Footer /></>;
+  return <><Navigation /><main id="main-content" tabIndex={-1} className="podcast-page min-h-screen pt-[var(--main-top-offset)]"><PodcastFeature fullPage /></main><Footer /></>;
 }

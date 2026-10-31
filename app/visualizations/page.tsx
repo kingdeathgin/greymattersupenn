@@ -5,7 +5,7 @@ export default function VisualizationsPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-[var(--main-top-offset)]">
+      <main id="main-content" tabIndex={-1} className="min-h-screen pt-[var(--main-top-offset)]">
         <section className="py-4 md:py-6 px-4 md:px-8">
           <div className="max-w-[var(--wide-max)] mx-auto">
             <h1 className="font-display text-4xl md:text-5xl font-light text-[var(--color-text-primary)] mb-4">

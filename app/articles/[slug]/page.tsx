@@ -346,7 +346,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Navigation />
-      <main className={`min-h-screen pt-[var(--main-top-offset)] ${hasBlackBackground ? "bg-black" : ""}`}>
+      <main id="main-content" tabIndex={-1} className={`min-h-screen pt-[var(--main-top-offset)] ${hasBlackBackground ? "bg-black" : ""}`}>
         <article className="pb-16 md:pb-24">
           {/* Featured image */}
           <div className="relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden">

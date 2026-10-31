@@ -80,7 +80,7 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
       <div className="relative z-10 max-w-[var(--wide-max)] mx-auto px-4 md:px-8">
         <header className="mb-8 border-y-2 border-[var(--color-text-primary)] py-4 md:mb-12">
           <div className="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
-            <span>Issue No. 01</span>
+            <span>Issue One archive</span>
             <span className="hidden sm:inline">The student neuroscience journal of Penn</span>
             <span>Fall 2025</span>
           </div>
