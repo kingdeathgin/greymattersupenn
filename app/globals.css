@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+.hero-brain-stage {
+  isolation: isolate;
+}
+
+.hero-brain-spotlight {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: -65%;
+  left: 5%;
+  width: 90%;
+  height: 170%;
+  background: linear-gradient(180deg, #ffe4ef08, #ff85b733 55%, #ff85b700);
+  clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%);
+  filter: blur(22px);
+}
+
+.hero-brain-halo {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  inset: -15% -5% -10%;
+  background: radial-gradient(ellipse, #ff85b738 0%, #f5549620 35%, transparent 70%);
+  filter: blur(24px);
+}
+
+.hero-brain-image {
+  filter: grayscale(1) sepia(1) saturate(2) hue-rotate(285deg) brightness(1.15)
+    drop-shadow(0 0 22px #ff85b745);
+}
+
 .synapse-page {
   color: #f5f5f5;
   background: radial-gradient(ellipse at 15% 5%, #142038 0%, #020510 55%);

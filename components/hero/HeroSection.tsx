@@ -12,13 +12,15 @@ export function HeroSection() {
     >
       <StarField />
       <div className="relative z-10 text-center w-full max-w-5xl mx-auto">
-        <div className="relative mx-auto max-w-[640px]">
+        <div className="hero-brain-stage relative mx-auto max-w-[640px]">
+          <div aria-hidden="true" className="hero-brain-spotlight" />
+          <div aria-hidden="true" className="hero-brain-halo" />
           <Image
             src="/main-image.png"
             alt="Penn Grey Matters brain illustration"
             width={560}
             height={344}
-            className="mx-auto mb-8 h-auto w-full max-w-[400px] md:max-w-[480px] object-contain"
+            className="hero-brain-image relative mx-auto mb-8 h-auto w-full max-w-[400px] md:max-w-[480px] object-contain"
             priority
           />
         </div>
