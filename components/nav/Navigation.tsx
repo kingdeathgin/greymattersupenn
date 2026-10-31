@@ -31,6 +31,12 @@ export function Navigation() {
           Penn Grey Matters
         </Link>
 
+        <div aria-hidden="true" className="hidden lg:flex flex-1 items-center px-4">
+          <span className="h-0.5 flex-1 rounded-full bg-[#F59ABA]" />
+          <Image src="/images/synapse-mascot.svg" alt="" width={54} height={36} className="shrink-0 object-contain" />
+          <span className="h-0.5 flex-1 rounded-full bg-[#F59ABA]" />
+        </div>
+
         {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-[var(--space-lg)] font-body text-sm font-medium text-[var(--color-text-muted)]">
           {navLinks.map((link) => (
