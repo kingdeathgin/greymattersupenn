@@ -41,7 +41,7 @@ export function SocialFeature() {
         </a>
         <article className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent)] mb-3">
-            From Instagram · April 24, 2026
+            From Instagram — April 24, 2026
           </p>
           <h2 className="font-editorial text-3xl md:text-5xl leading-[1.12] text-[var(--color-text-primary)]">
             Sleep clears more than fatigue.
@@ -52,7 +52,7 @@ export function SocialFeature() {
             proteins associated with neurodegenerative disease.
           </p>
           <p className="font-mono text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] mt-6">
-            Research spotlight · Xie et al., Science
+            Research spotlight — Xie et al., Science
           </p>
           <a
             href={INSTAGRAM_POST_URL}

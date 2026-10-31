@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 import type { ThreeEvent } from "@react-three/fiber";
-import type { BufferGeometry, Mesh } from "three";
+import type { BufferGeometry, Mesh, Object3D } from "three";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Bounds } from "@react-three/drei";
 
@@ -34,8 +34,15 @@ const paintedRegions: PaintedRegion[] = [
 
 function getRegion(event: ThreeEvent<PointerEvent>): string {
   const mesh = event.object as Mesh<BufferGeometry>;
-  if (mesh.name.includes("Tube")) return "Brainstem";
-  if (mesh.name.includes("Cylinder") || mesh.name.includes("Quad Sphere 1")) return "Cerebellum";
+  // GLTFLoader replaces spaces with underscores and splits multi-material
+  // meshes into children. Resolve the original anatomical mesh via its parents.
+  let node: Object3D | null = mesh;
+  while (node) {
+    const name = node.name.replace(/ /g, "_");
+    if (name === "Quad_Sphere_1") return "Cerebellum";
+    if (name === "Cylinder" || /^Tube(?:_[12])?$/.test(name)) return "Brainstem";
+    node = node.parent;
+  }
 
   const colors = mesh.geometry.getAttribute("color");
   if (!colors || !event.face) return "Cerebral cortex";
@@ -104,15 +111,15 @@ export function BrainCanvas({ className = "" }: BrainCanvasProps) {
 
   return (
     <div className={className}>
-      <div className="relative w-full aspect-[16/10] rounded-[var(--radius-lg)] overflow-hidden border border-[var(--color-accent)]/20 bg-[var(--color-surface)]">
+      <div className="relative w-full aspect-[16/10] overflow-hidden">
         <Suspense fallback={<BrainFallback />}>
           <Canvas
             className="!h-full !w-full"
             camera={{ position: [0, 0, 2.5], fov: 35 }}
-            gl={{ antialias: true, alpha: false }}
+            gl={{ antialias: true, alpha: true }}
             dpr={[1, 1.5]}
             fallback={<BrainFallback />}
-            onCreated={({ gl }) => gl.setClearColor("#060318", 1)}
+            onCreated={({ gl }) => gl.setClearColor("#000000", 0)}
             onPointerMissed={() => setRegion(null)}
           >
             <ambientLight intensity={1.5} />

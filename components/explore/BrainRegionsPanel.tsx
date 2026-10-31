@@ -44,7 +44,7 @@ export function BrainRegionsPanel() {
               </h4>
               <ul className="text-[var(--color-text-muted)] text-sm">
                 {selectedRegion.functions.map((f) => (
-                  <li key={f}>• {f}</li>
+                  <li key={f}>— {f}</li>
                 ))}
               </ul>
             </div>

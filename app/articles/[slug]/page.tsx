@@ -384,9 +384,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               )}
               <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm text-[var(--color-text-muted)]">
                 <span>By {article.author}</span>
-                <span>•</span>
+                <span>—</span>
                 <span>{article.comingSoon ? "Article forthcoming" : `${article.readingTime} min read`}</span>
-                <span>•</span>
+                <span>—</span>
                 <time dateTime={article.publishedAt}>
                   {new Date(article.publishedAt).toLocaleDateString("en-US", {
                     timeZone: "UTC",
@@ -421,7 +421,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   ))}
                 </div>
                 <span className="font-body text-sm text-[var(--color-text-muted)]">
-                  {contributors.map((contributor) => contributor.name).join(" · ")}
+                  {contributors.map((contributor) => contributor.name).join(" — ")}
                 </span>
               </div>
               {articleSummaries[article.slug] && (

@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/articles", label: "Articles" },
   { href: "/podcast", label: "Podcast" },
   { href: "/mindwalk", label: "Mindwalk" },
-  { href: "/chapters", label: "Chapters" },
   { href: "/team", label: "Team" },
   { href: "/about", label: "About" },
   { href: "/get-involved", label: "Join" },
@@ -20,7 +19,7 @@ export function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[var(--z-navigation)] isolate px-4 py-4 md:px-8"
+      className="fixed top-0 left-0 right-0 z-[var(--z-navigation)] isolate border-b border-white px-4 py-4 md:px-8"
       style={{ background: "var(--color-bg)" }}
     >
       <div className="max-w-[var(--wide-max)] mx-auto flex items-center justify-between">
@@ -33,7 +32,7 @@ export function Navigation() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-[var(--space-lg)] font-mono text-sm uppercase text-[var(--color-text-muted)]" style={{ letterSpacing: "0.08em" }}>
+        <ul className="hidden lg:flex items-center gap-[var(--space-lg)] font-body text-sm font-medium text-[var(--color-text-muted)]">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -71,7 +70,7 @@ export function Navigation() {
           id="mobile-navigation"
           className="relative z-10 -mx-4 px-4 lg:hidden overflow-hidden bg-[var(--color-bg)] shadow-[0_18px_32px_rgba(0,0,0,0.45)] animate-in fade-in slide-in-from-top-2 duration-200"
         >
-          <ul className="flex flex-col gap-[var(--space-md)] py-[var(--space-lg)] font-mono text-sm uppercase text-[var(--color-text-muted)]" style={{ letterSpacing: "0.08em" }}>
+          <ul className="flex flex-col gap-[var(--space-md)] py-[var(--space-lg)] font-body text-base font-medium text-[var(--color-text-muted)]">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link

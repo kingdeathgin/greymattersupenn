@@ -38,7 +38,7 @@ export default function ArticlesPage() {
 
             <div className="max-w-2xl">
               <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent)]">
-                Fall 2025 · 7 articles
+                Fall 2025 — 7 articles
               </p>
               <h2 id="issue-one-heading" className="mt-4 font-display text-4xl font-light text-[var(--color-text-primary)] md:text-6xl">
                 Issue One

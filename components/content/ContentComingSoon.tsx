@@ -50,7 +50,7 @@ function ResearchVisual() {
         className="h-full w-full"
         style={{
           background:
-            "linear-gradient(135deg, rgba(155, 93, 229, 0.25) 0%, rgba(0, 229, 255, 0.08) 50%, transparent 100%)",
+            "var(--color-surface)",
         }}
       />
     </div>
@@ -72,17 +72,6 @@ export function ContentComingSoon({
   return (
   <>
     <section className="relative py-8 md:py-12 px-4 md:px-8 overflow-hidden">
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[70%] opacity-20 pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            visual === "podcast"
-              ? "radial-gradient(ellipse 60% 50% at 50% 0%, var(--color-accent) 0%, transparent 70%)"
-              : "radial-gradient(ellipse 60% 50% at 50% 0%, var(--color-accent-violet) 0%, transparent 70%)",
-        }}
-      />
-
       <div className="max-w-[var(--wide-max)] mx-auto relative">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-accent)] mb-4">
           {label}
@@ -143,7 +132,7 @@ export function ContentComingSoon({
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                 style={{
                   background:
-                    "radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.06) 0%, transparent 60%)",
+                    "var(--color-surface)",
                 }}
                 aria-hidden="true"
               />

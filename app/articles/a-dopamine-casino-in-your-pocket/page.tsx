@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Forthcoming in Issue Two. ${article.title}: ${article.subtitle}. Authored by ${article.author}.`,
   openGraph: {
     title: `${article.title}: ${article.subtitle}`,
-    description: `Coming in Issue Two · Authored by ${article.author}`,
+    description: `Coming in Issue Two — Authored by ${article.author}`,
     images: [{ url: article.image, width: article.width, height: article.height, alt: article.imageAlt }],
   },
 };

@@ -9,7 +9,7 @@ export function IssueTwoPreview({ fullPage = false }: { fullPage?: boolean }) {
       <div className="issue-two-inner">
         <div className="issue-two-heading-row">
           <span>ISSUE TWO</span>
-          <span>ARTICLE 01 · FORTHCOMING</span>
+          <span>ARTICLE 01 — FORTHCOMING</span>
         </div>
         <div className="issue-two-layout">
           <figure className="issue-two-art">

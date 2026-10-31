@@ -20,7 +20,7 @@ function ArticleCard({ article }: { article: Article }) {
   return (
     <div className={CARD_CLASS}>
       <Link href={`/articles/${article.slug}`} className="block h-full group">
-        <article className="h-full flex flex-col rounded-[var(--radius-lg)] border border-[var(--color-accent)]/15 overflow-hidden bg-[var(--color-surface)] hover:border-[var(--color-accent)]/40 transition-all duration-300 hover:shadow-[0_0_32px_rgba(0,229,255,0.08)]">
+        <article className="h-full flex flex-col rounded-[var(--radius-lg)] border border-[var(--color-accent)]/15 overflow-hidden bg-[var(--color-surface)] hover:border-[var(--color-accent)]/40 transition-all duration-300">
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
               src={article.image}
@@ -42,7 +42,7 @@ function ArticleCard({ article }: { article: Article }) {
               {article.excerpt}
             </p>
             <p className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] mt-4 line-clamp-1">
-              By {article.author} · {formatPublishedDate(article.publishedAt)}
+              By {article.author} — {formatPublishedDate(article.publishedAt)}
             </p>
             <div className="flex items-center justify-between mt-4 pt-3 border-t border-[var(--color-accent)]/10">
               <span className="font-mono text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
@@ -77,15 +77,6 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
       className="journal-paper relative overflow-hidden py-[var(--space-2xl)] md:py-[var(--space-3xl)] border-y border-black/10"
       aria-label="Latest articles"
     >
-      <Image
-        src="/images/editorial/neuroscience-margin-notes.png"
-        alt=""
-        width={1254}
-        height={1254}
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-28 top-10 hidden w-[34rem] rotate-[7deg] opacity-[0.22] saturate-[1.12] lg:block"
-      />
-
       <div className="relative z-10 max-w-[var(--wide-max)] mx-auto px-4 md:px-8">
         <header className="mb-8 border-y-2 border-[var(--color-text-primary)] py-4 md:mb-12">
           <div className="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
@@ -122,23 +113,6 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
                           <path d="M0 0L8-7L10 3L0 0Z" fill="#ead6ad" stroke="#46382a" strokeWidth="1.2" />
                           <path d="M0 0L3.6-2.9L4.5 1.1L0 0Z" fill="#28231f" />
                         </g>
-                        <g className="journal-graphite-dust" fill="#77716b">
-                          <circle r="1.2">
-                            <animate attributeName="cx" values="0;-5;-8" dur="0.7s" repeatCount="indefinite" />
-                            <animate attributeName="cy" values="0;2;5" dur="0.7s" repeatCount="indefinite" />
-                            <animate attributeName="opacity" values="0.7;0.35;0" dur="0.7s" repeatCount="indefinite" />
-                          </circle>
-                          <circle r="0.85">
-                            <animate attributeName="cx" values="0;-3;-6" dur="0.55s" begin="0.18s" repeatCount="indefinite" />
-                            <animate attributeName="cy" values="0;-1;-4" dur="0.55s" begin="0.18s" repeatCount="indefinite" />
-                            <animate attributeName="opacity" values="0.65;0.3;0" dur="0.55s" begin="0.18s" repeatCount="indefinite" />
-                          </circle>
-                          <circle r="0.65">
-                            <animate attributeName="cx" values="0;2;5" dur="0.62s" begin="0.32s" repeatCount="indefinite" />
-                            <animate attributeName="cy" values="0;3;6" dur="0.62s" begin="0.32s" repeatCount="indefinite" />
-                            <animate attributeName="opacity" values="0.55;0.25;0" dur="0.62s" begin="0.32s" repeatCount="indefinite" />
-                          </circle>
-                        </g>
                       </g>
                       <animateMotion
                         dur="1.35s"
@@ -162,9 +136,9 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
 
         <div className="border-y border-[var(--color-accent)]/15 py-3 flex flex-wrap justify-center gap-x-5 gap-y-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
           <span>Student-led</span>
-          <span className="text-[var(--color-accent)]">•</span>
+          <span className="text-[var(--color-accent)]">—</span>
           <span>Research-informed</span>
-          <span className="text-[var(--color-accent)]">•</span>
+          <span className="text-[var(--color-accent)]">—</span>
           <span>University of Pennsylvania</span>
         </div>
 
@@ -187,7 +161,7 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
           </Link>
           <article>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--color-accent)] mb-3">
-              Featured story · {featuredArticle.category}
+              Featured story — {featuredArticle.category}
             </p>
             <h2 className="font-editorial text-3xl md:text-5xl leading-[1.12] text-[var(--color-text-primary)]">
               <Link href={`/articles/${featuredArticle.slug}`} className="hover:text-[var(--color-accent)] transition-colors">
@@ -203,7 +177,7 @@ export function ArticlesRow({ articles }: ArticlesRowProps) {
               {featuredArticle.excerpt}
             </p>
             <p className="font-mono text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] mt-6">
-              By {featuredArticle.author} · {formatPublishedDate(featuredArticle.publishedAt)} · {featuredArticle.comingSoon ? "Article forthcoming" : `${featuredArticle.readingTime} min read`}
+              By {featuredArticle.author} — {formatPublishedDate(featuredArticle.publishedAt)} — {featuredArticle.comingSoon ? "Article forthcoming" : `${featuredArticle.readingTime} min read`}
             </p>
             <Link href={`/articles/${featuredArticle.slug}`} className="inline-block font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] mt-5 hover:text-[var(--color-text-primary)] transition-colors">
               Read the story →

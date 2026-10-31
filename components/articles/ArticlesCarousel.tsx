@@ -130,7 +130,7 @@ export function ArticlesCarousel({ articles, title = "The Archive", showViewAll 
               key={index}
               type="button"
               onClick={() => scrollTo(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-6 h-0.5 transition-all duration-300 ${
                 index === selectedIndex
                   ? "bg-[var(--color-accent)] w-6"
                   : "bg-[var(--color-accent)]/30 hover:bg-[var(--color-accent)]/50"

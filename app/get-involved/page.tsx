@@ -17,14 +17,6 @@ export default function GetInvolvedPage() {
             <p className="font-body text-[var(--color-text-primary)]">Applied or returning to Penn Grey Matters? Your next chapter is here.</p>
             <Link href="/application-update" className="font-mono text-sm text-[var(--color-accent)] underline underline-offset-4">Check application update →</Link>
           </div>
-          <div
-            className="absolute inset-0 pointer-events-none opacity-70"
-            aria-hidden="true"
-            style={{
-              background:
-                "radial-gradient(ellipse 55% 55% at 18% 28%, rgba(0, 229, 255, 0.12), transparent 72%), radial-gradient(ellipse 45% 45% at 85% 70%, rgba(155, 93, 229, 0.12), transparent 72%)",
-            }}
-          />
           <div className="relative max-w-[var(--wide-max)] mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-24 items-center">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.28em] text-[var(--color-accent)] mb-5">
@@ -41,7 +33,7 @@ export default function GetInvolvedPage() {
               <div className="flex flex-wrap gap-x-5 gap-y-3 mt-9 font-mono text-xs uppercase tracking-wider text-[var(--color-text-muted)]">
                 {roles.map((role) => (
                   <span key={role} className="flex items-center gap-2">
-                    <span className="size-1.5 rounded-full bg-[var(--color-accent)]" />
+                    <span className="h-px w-4 bg-[var(--color-accent)]" />
                     {role}
                   </span>
                 ))}

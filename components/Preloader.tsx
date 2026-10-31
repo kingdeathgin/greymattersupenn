@@ -35,19 +35,8 @@ export function Preloader({ visible }: PreloaderProps) {
                 />
               </div>
             </motion.div>
-            <motion.blockquote
-              className="font-display text-base md:text-lg font-light italic text-[var(--color-text-muted)] max-w-md text-center mt-4 shrink-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.55, duration: 0.6 }}
-            >
-              &ldquo;The brain is wider than the sky.&rdquo;
-              <footer className="font-mono text-xs not-italic text-[var(--color-accent)]/70 mt-2 tracking-wider">
-                — Emily Dickinson
-              </footer>
-            </motion.blockquote>
             <motion.p
-              className="font-display text-2xl md:text-3xl font-light text-[var(--color-text-primary)] mt-6 shrink-0"
+              className="font-display text-4xl md:text-6xl font-bold text-[var(--color-text-primary)] mt-6 shrink-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
@@ -61,7 +50,7 @@ export function Preloader({ visible }: PreloaderProps) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.4 }}
             >
-              Making Neuroscience Accessible
+              A student journal
             </motion.p>
           </div>
         </motion.div>
